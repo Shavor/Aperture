@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Стартовый шаблон | ВебКадеми</title>
+		<link rel="stylesheet" href="./css/main.css" />
+
+		<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="container flex header__container">
+				<a class="logo">
+					<img src="./img/logo.svg" alt="Aperture" />
+				</a>
+				<nav class="nav flex" title="Main navigation">
+					<a class="nav__link areas" href="#!">Business areas</a>
+					<ul class="nav__list flex">
+						<li class="nav__item">
+							<a class="nav__link" href="#!">Featured images</a>
+						</li>
+						<li class="nav__item">
+							<a class="nav__link" href="#!">Gear cage</a>
+						</li>
+						<li class="nav__item">
+							<a class="nav__link" href="#!">Contact</a>
+						</li>
+						<button class="btn">
+							<a href="#!" class="btn__link">Get template</a>
+						</button>
+					</ul>
+				</nav>
+				<button class="burger" id="burger">
+					<span class="burger__line">1</span>
+					<span class="burger__line">2</span>
+					<span class="burger__line">3</span>
+					<span class="burger__line">4</span>
+				</button>
+			</div>
+		</header>
+		<div class="mobile-nav">
+			<ul class="mobile-nav__list">
+				<li class="nav__item">
+					<a class="nav__link" href="#!">Featured images</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="#!">Gear cage</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="#!">Contact</a>
+				</li>
+			</ul>
+			<button class="btn">
+				<a href="#!" class="btn__link">Get template</a>
+			</button>
+		</div>
+
+		<main class="docs">
+			<section>
+				<div class="container">
+					<h1 class="title-1">Документация</h1>
+					<p>Документация и&#160;возможности сборки и&#160;стартового шаблона</p>
+
+					<p>
+						Запуск в&#160;режиме разработки: <code>gulp</code><br />
+						Сборка оптимизированной версии для продакшена: <code>gulp docs</code>
+					</p>
+
+					<h3 class="title-3">Возможности стартового шаблона</h3>
+					<ul>
+						<li>Готовые стили для CSS контейнеров на&#160;все случаи жизни.</li>
+						<li>Миксины и&#160;сниппеты для адаптива.</li>
+						<li>Миксин и&#160;сниппет для CSS retina фоновых изображений.</li>
+					</ul>
+
+					<h3 class="title-3">Возможности сборки</h3>
+
+					<ul>
+						<li>
+							Автоисправление путей. Смело используйте подсказки редактора при указании пути к&#160;файлу. Сборка сама удалит лишние поднятия на&#160;уровень вверх
+							<code>../../</code> в&#160;src HTML и background-image в&#160;SCSS.
+						</li>
+						<li>Автоматическая генерация SVG спрайтов. Подробнее см.&#160;ниже.</li>
+					</ul>
+
+					<h3 class="title-3">Особенности сборки для продакшена gulp docs</h3>
+					<ul>
+						<li>Автоматическое сжатие jpg изображений</li>
+						<li>Автоматическая генерация webp графики и&#160;указания webp формата в&#160;HTML.</li>
+						<li>
+							При прописывании тега img не&#160;обязательно прописывать srcset с&#160;2x. Плагин 'gulp-webp-retina-html' в&#160;таске 'html: dev' автоматически
+							добавляет тег picture и&#160;source для 2x изображений. Обязательно сохранять картинки в&#160;@2x разрешении.
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Автогенерация шрифтов и&#160;CSS подключения</h2>
+
+					<ol>
+						<li>Размещаем TTF и&#160;OTF шрифты в&#160;<code>src/fonts/</code></li>
+						<li>При запуске сборки OTF конвертируется в&#160;TTF внутри <code>src/fonts/</code>.</li>
+						<li>Затем TTF в&#160;WOFF и&#160;WOFF2 из&#160;<code>src/fonts/</code> в&#160;<code>build/fonts/</code>.</li>
+						<li>
+							Генерируются CSS стили подключения внутри <code>src/scss/base/_fontsAutoGen.scss</code>.<br />
+							Важно! Этот файл генерируется и&#160;перезаписывается автоматически.
+						</li>
+					</ol>
+
+					<p>
+						Пример:
+					</p>
+
+					<p class="font-1">Hello, world! Привет, мир!</p>
+					<p class="font-2">Hello, world! Привет, мир!</p>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Полезные сниппеты</h2>
+					<p>Сниппеты хранятся в&#160;папке <code>.vscode</code> в&#160;файле <code>webCademy.code-snippets</code></p>
+					<h4 class="title-4">SCSS сниппеты для медиазапросов</h4>
+
+					<p>Код вызова: <code>tablet</code></p>
+					<pre class="code">@include tablet { ... }</pre>
+
+					<p>Код вызова: <code>mobile</code></p>
+					<pre class="code">@include mobile { ... }</pre>
+
+					<p>Retina background-image через медиа запрос. Код вызова: <code>mediaBg</code></p>
+					<pre class="code">
+@include mediaBg() {
+	background-image: url('./../img/example@2x.jpg');
+}</pre
+					>
+
+					<p>Retina background-image через image-set. Код вызова: <code>imgSet</code></p>
+					<pre class="code">
+background-image: image-set(
+	url('./../img/bg.jpg') 1x,
+	url('./../img/bg@2x.jpg') 2x);</pre
+					>
+
+					<h4 class="title-4">HTML сниппет для svg иконок из&#160;спрайта</h4>
+					<p>Код вызова: <code>svgIcon</code></p>
+					<pre class="code">
+&lt;svg class="icon icon--heart-line"&gt;
+	&lt;use href="./img/svgsprite/sprite.symbol.svg#heart-line"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+</pre
+					>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">SVG спрайты</h2>
+
+					<div class="icons-wrapper">
+						<svg class="icon icon--heart-line">
+							<use href="./img/svgsprite/sprite.symbol.svg#heart-line"></use>
+						</svg>
+
+						<svg class="icon icon--id-card-line">
+							<use href="./img/svgsprite/sprite.symbol.svg#id-card-line"></use>
+						</svg>
+						<svg class="icon icon--search-line">
+							<use href="./img/svgsprite/sprite.symbol.svg#search-line"></use>
+						</svg>
+						<svg class="icon icon--user-star">
+							<use href="./img/svgsprite/sprite.symbol.svg#user-star-line"></use>
+						</svg>
+					</div>
+
+					<p>Иконки размещаем в&#160;папку: <code>src/img/svgicons</code></p>
+					<p>Готовый файл со&#160;спрайтом собирается в: <code>build/img/svgsprite/sprite.symbol.svg</code></p>
+
+					<h4 class="title-4">HTML код</h4>
+					<pre class="code">
+&lt;svg class="icon icon heart-line"&gt;
+	&lt;use href="./img/svgsprite/sprite.symbol.svg#heart-line"&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre
+					>
+
+					<h4 class="title-4">CSS код</h4>
+					<pre class="code">
+.icon {
+	fill: transparent;
+	stroke: transparent;
+	width: 62px;
+	height: 62px;
+}
+
+.heart-line {
+	fill: rgb(241, 68, 131);
+}
+
+.id-card-line {
+	fill: rgb(51, 51, 51);
+}
+
+.search-line {
+	fill: rgb(28, 176, 80);
+}
+
+.icon--user-star {
+	fill: rgb(26, 134, 235);
+}</pre
+					>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Шпаргалка gulp-file-include</h2>
+					<p>
+						<a href="https://opalescent-side-463.notion.site/Gulp-file-include-ae5885e857cc4658987dd30f40b77e74?pvs=4" target="_blank">
+							Ссылка на&#160;шпаргалку.
+						</a>
+					</p>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Пример работы типографа</h2>
+
+					<h4 class="title-4">Русский язык</h4>
+					<p>
+						Раздобудь к&#160;утру ковёр&#160;&#8212; Шитый золотом узор!.. Государственное дело,&#160;&#8212; Расшибись, а&#160;будь добёр! Чтоб на&#160;ём&#160;была
+						видна, Как на&#160;карте, вся страна, Потому как мне с&#160;балкону Нет обзору ни&#160;хрена! Леонид Филатов &#171;Про Федота-стрельца&#187;.
+					</p>
+
+					<h4 class="title-4">Английский язык</h4>
+
+					<p>
+						Get a&#160;carpet by&#160;morning&#160;&#8212; A&#160;pattern embroidered in&#160;gold! So&#160;that the whole country can be&#160;seen on&#160;it, Like
+						on&#160;a&#160;map, Because from the balcony I&#160;have no&#160;view of&#160;anything! Leonid Filatov &#171;About Fedot the Sagittarius&#187;
+					</p>
+				</div>
+			</section>
+			<section>
+				<div class="container">
+					<h2 class="title-2">Контейнеры</h2>
+				</div>
+
+				<div class="container">
+					<p>Стандартный контейнер <code>.container</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-full">
+					<p>Контейнер на&#160;всю ширину<code>.container-full</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-left-50">
+					<p>Контейнер слева на&#160;50%<code>.container-left-50</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-right-50">
+					<p>Контейнер справа на&#160;50%<code>.container-right-50</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-left">
+					<p>Контейнер слева до&#160;размера контейнера <code>.container-left</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-right">
+					<p>Контейнер вправо<code>.container-right</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-half-left">
+					<p>Контейнер на&#160;половину слева <code>.container-half-left</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+
+				<div class="container-half-right">
+					<p>Контейнер на&#160;половину справа <code>.container-half-right</code></p>
+					<div class="content-demo">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit obcaecati, nesciunt, nam illum nemo, quod hic tenetur velit quae animi tempore
+							error&#160;at. Cumque, nisi. Laudantium deserunt quis vitae voluptas?
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer help">
+					<h1 class="help__title">
+						Need help with photography or&#160;videography?
+					</h1>
+					<p class="help__subtitle">We&#8217;re here for you!</p>
+					<button class="btn">
+						<a href="#!" class="btn__link circle">Get in&#160;touch</a>
+					</button>
+				</div>
+				<div class="footer__bottom">
+					<div class="footer__bottom business">
+						<div class="business__items grid">
+							<div class="business__items-logo">
+								<img src="./img/footer/footer-log.svg" alt="business-logo" class="business-logo" />
+								<p class="business-text">
+									Photographers &amp;&#160;videographers capturing the world around&#160;us.
+								</p>
+							</div>
+							<div class="business__items areas">
+								<p class="areas__titel">Business areas</p>
+								<ul class="areas__list">
+									<li class="areas__item">
+										<a href="" class="areas__link">Product Photography</a>
+									</li>
+									<li class="areas__item">
+										<a href="" class="areas__link">Architecture Photography</a>
+									</li>
+									<li class="areas__item">
+										<a href="" class="areas__link">Drone Photography</a>
+									</li>
+									<li class="areas__item">
+										<a href="" class="areas__link">Wildlife Photography</a>
+									</li>
+								</ul>
+							</div>
+							<div class="business__items pages">
+								<p class="pages__titel">Pages</p>
+								<ul class="pages__list">
+									<li class="pages__item">
+										<a href="" class="pages__link">Gear cage</a>
+									</li>
+									<li class="pages__item">
+										<a href="" class="pages__link">Featured images</a>
+									</li>
+									<li class="pages__item">
+										<a href="" class="pages__link">Contact</a>
+									</li>
+									<li class="pages__item">
+										<a href="" class="pages__link">Style guide</a>
+									</li>
+									<li class="pages__item">
+										<a href="" class="pages__link">Instructions</a>
+									</li>
+									<li class="pages__item">
+										<a href="" class="pages__link">Changelog</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer__bottom subscribe">
+						<div class="subscribe__left">
+							<p class="subscribe__title">Subscribe to&#160;our newsletter</p>
+							<p class="subscribe__subtitle">Read about all the things we&#160;do.</p>
+						</div>
+						<button class="btn__footer">
+							<a href="#!" class="btn__link circle--footer"></a>
+						</button>
+					</div>
+					<div class="footer__bottom copyright">
+						<p class="copyright__text">
+							&#169;&#160;Aperture Photography, Inc. All rights reserved. Licensing
+						</p>
+						<div class="copyright__social">
+							<a href="https://twitter.com/" class="copyright__social twitter">
+								<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M24 4.55654C23.1169 4.94873 22.168 5.21203 21.1724 5.3327C22.1899 4.72384 22.9688 3.75844 23.3363 2.60928C22.3846 3.17426 21.3288 3.58291 20.2098 3.80506C19.313 2.84789 18.0322 2.25 16.6171 2.25C13.8965 2.25 11.6915 4.45232 11.6915 7.173C11.6915 7.5597 11.7353 7.93544 11.8176 8.29473C7.72575 8.08903 4.09736 6.1308 1.67021 3.14958C1.24786 3.87637 1.00377 4.72384 1.00377 5.62616C1.00377 7.33481 1.87316 8.84051 3.19232 9.72363C2.38601 9.69895 1.62633 9.47679 0.962633 9.10654V9.16962C0.962633 11.5557 2.66027 13.5441 4.9119 13.9966C4.50051 14.1091 4.06445 14.1694 3.61467 14.1694C3.29654 14.1694 2.98937 14.1392 2.69044 14.0816C3.31574 16.0371 5.13404 17.4605 7.28694 17.5017C5.60302 18.8209 3.48303 19.608 1.17381 19.608C0.77614 19.608 0.386699 19.5861 0 19.5395C2.18032 20.9354 4.76654 21.75 7.54748 21.75C16.6034 21.75 21.5564 14.2489 21.5564 7.74346C21.5564 7.52954 21.5509 7.31835 21.5427 7.10717C22.5053 6.41055 23.3418 5.54388 24 4.55654Z"
+										fill="#C0C0C0"
+									/>
+								</svg>
+							</a>
+							<a href="http://instagram.com" class="copyright__social insta">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_2_418)">
+										<path
+											d="M12 5.76825C8.5638 5.76825 5.76825 8.5638 5.76825 12C5.76825 15.4362 8.5638 18.2293 12 18.2293C15.4362 18.2293 18.2293 15.4338 18.2293 12C18.2317 8.5638 15.4362 5.76825 12 5.76825ZM12 15.8536C9.87422 15.8536 8.14641 14.1258 8.14641 12C8.14641 9.87422 9.87422 8.14641 12 8.14641C14.1258 8.14641 15.8536 9.87422 15.8536 12C15.8536 14.1258 14.1258 15.8536 12 15.8536ZM17.0936 0H6.90637C3.09889 0 0 3.09889 0 6.90637V17.0936C0 20.9011 3.09889 24 6.90637 24H17.0936C20.9011 24 24 20.9011 24 17.0936V6.90637C24 3.09889 20.9035 0 17.0936 0ZM21.6243 17.0936C21.6243 19.5907 19.5907 21.6218 17.0936 21.6218H6.90637C4.4093 21.6218 2.37816 19.5907 2.37816 17.0936V6.90637C2.37816 4.4093 4.4093 2.37816 6.90637 2.37816H17.0936C19.5907 2.37816 21.6218 4.4093 21.6218 6.90637V17.0936H21.6243ZM18.3167 3.96764C17.4188 3.96764 16.6859 4.69808 16.6859 5.59838C16.6859 6.49626 17.4164 7.22912 18.3167 7.22912C19.2146 7.22912 19.9474 6.49869 19.9474 5.59838C19.9474 4.69808 19.2146 3.96764 18.3167 3.96764Z"
+											fill="#C0C0C0"
+										/>
+									</g>
+									<defs>
+										<clipPath id="clip0_2_418">
+											<rect width="24" height="24" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</a>
+							<a href="facebook.com" class="copyright__social facebook">
+								<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M11.625 7.7714H7.79015V5.2806C7.79015 4.34518 8.41822 4.12573 8.85815 4.12573H11.5586V0.0137159L7.83442 0C3.70352 0 2.76556 3.06686 2.76556 5.03098V7.7714H0.375V12.0069H2.76556V24H7.79292V12.0096H11.1851L11.625 7.7714Z"
+										fill="#C0C0C0"
+									/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="./js/index.bundle.js"></script>
+	</body>
+</html>
