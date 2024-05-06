@@ -1,0 +1,53 @@
+.btn {
+	margin-right: 4px;
+
+	&__link {
+		border-radius: 14px;
+		padding: 9px 13px;
+		background: #fff;
+
+		font-size: 16px;
+		line-height: 125%;
+		letter-spacing: 0.03em;
+		color: #000;
+
+		position: relative;
+		transition: all 0.2s ease-in-out;
+
+		&.circle {
+			padding-left: 42px;
+
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		@include hover {
+			color: var(--text-color);
+			background-color: #5a4c4d;
+		}
+
+		&:active {
+			border-color: var(--link-color);
+			background-color: var(--accent);
+		}
+	}
+
+
+}
+
+.circle::after {
+	content: '';
+	position: absolute;
+	background-image: url(../../img/wedo/cercle-btn.svg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	top: 50%;
+	transform: translateY(-50%);
+	left: 5px;
+	width: 32px;
+	height: 32px;
+}

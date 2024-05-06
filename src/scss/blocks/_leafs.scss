@@ -1,0 +1,68 @@
+.leafs {
+	background-color: #999;
+	background-image: url('../../img/leafs/leafs-bg.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 600px;
+
+	padding-bottom: 40px;
+
+	@include mobile {
+		height: 510px;
+		padding: 10px 10px;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: flex-end;
+		max-width: 333px;
+
+		position: absolute;
+		bottom: 0;
+		right: -119px;
+
+		@include big-desktop {
+			right: 0;
+		}
+	}
+
+	&__content {
+		flex-direction: column;
+		align-items: flex-end;
+		padding-bottom: 204px;
+	}
+
+	&__title {
+		font-weight: 400;
+		font-size: var(--main-size);
+		line-height: 143%;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--text-color);
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: var(--main-size);
+		line-height: 143%;
+		color: #c0c0c0;
+	}
+
+	&__footer {}
+
+	&__items {
+		display: flex;
+		gap: 16px;
+	}
+
+	&__item {}
+}
+
+.leafs-position {
+	height: 100%;
+	position: relative;
+}

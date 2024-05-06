@@ -1,0 +1,112 @@
+.wedo {
+
+	background: #000;
+	padding: 113px 0 100px;
+
+	@include mobile {
+		padding: 50px 0 50px;
+	}
+
+	&__title {
+		font-weight: 400;
+		font-size: 40px;
+		line-height: 105%;
+		text-align: center;
+		color: var(--text-color);
+
+		padding-bottom: 15px;
+
+		@include mobile {
+			font-size: 35px;
+		}
+	}
+
+	&__subtitle {
+		font-weight: 400;
+		font-size: 23px;
+		line-height: 130%;
+		text-align: center;
+		color: #c0c0c0;
+
+		padding-bottom: 42px;
+
+		@include mobile {
+			font-size: 20px;
+		}
+	}
+
+	&__content {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+
+		@include mobile {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__content-item {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: flex-start;
+
+		background-color: #999;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		max-width: 576px;
+		height: 600px;
+
+		padding: 30px;
+
+		@include mobile {
+			height: 351px
+		}
+	}
+
+	&__content-item-name {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 143%;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: #fff;
+
+		padding-bottom: 12px;
+	}
+
+	// .wedo__content-item-text
+
+	&__content-item-text {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 143%;
+		color: #c0c0c0;
+
+		padding-bottom: 19px;
+	}
+}
+
+.product {
+	background-image: url(../../img/wedo/1.jpg);
+}
+
+.architecture {
+	background-image: url(../../img/wedo/2.jpg);
+}
+
+.drone {
+	background-image: url(../../img/wedo/3.jpg);
+}
+
+.wildlife {
+	background-image: url(../../img/wedo/4.jpg);
+}
+
+.btn {
+
+	// .btn__link
+
+	&__link {}
+}

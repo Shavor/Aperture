@@ -1,0 +1,45 @@
+.nav {
+	font-size: 18px;
+	gap: 32px;
+
+	@include small-desktop {
+		display: none;
+	}
+
+	&__list {
+		display: flex;
+		column-gap: 30px;
+
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 133%;
+	}
+
+	&__link {
+		color: #fff;
+		transition: color 0.3s ease-in-out;
+
+		&:focus {
+			outline: 1px solid var(--accent);
+			outline-offset: 3px;
+		}
+
+		@include hover {
+			color: var(--accent);
+		}
+
+		&:active {
+			color: var(--link-color);
+		}
+	}
+
+}
+
+.areas {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 154%;
+	color: #fff;
+}
