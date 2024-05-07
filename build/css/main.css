@@ -889,7 +889,7 @@ body {
 .hero {
   height: 711px;
   background-color: #999;
-  background-image: url("/img/hero/hero-bg.jpg");
+  background-image: url("../img/hero/hero-bg.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
